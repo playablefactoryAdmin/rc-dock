@@ -47,13 +47,13 @@ export function DockTabBar(props) {
         ref.current = div;
     };
     const onKeyDown = (e) => {
-        if (e.key.startsWith('Arrow')) {
-            if (!checkLocalTabMove(e.key, ref.current) && !isMaximized) {
-                layout.navigateToPanel(ref.current, e.key);
-            }
-            e.stopPropagation();
-            e.preventDefault();
-        }
+        // if (e.key.startsWith('Arrow')) {
+        //   if (!checkLocalTabMove(e.key, ref.current) && !isMaximized) {
+        //     layout.navigateToPanel(ref.current, e.key);
+        //   }
+        //   e.stopPropagation();
+        //   e.preventDefault();
+        // }
     };
     return (React.createElement(DragDropDiv, { onDragStartT: onDragStart, onDragMoveT: onDragMove, onDragEndT: onDragEnd, role: "tablist", className: "dock-bar", onKeyDown: onKeyDown, getRef: getRef, tabIndex: -1 },
         React.createElement(TabNavList, Object.assign({}, restProps))));
